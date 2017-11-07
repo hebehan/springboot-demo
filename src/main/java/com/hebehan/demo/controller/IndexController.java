@@ -35,8 +35,9 @@ public class IndexController {
 
     @GetMapping("/getall")
     @ResponseBody
-    public Result getAll(){
+    public Result getAll(Model model){
         System.out.println("getall 执行中");
+        model.addAttribute("list",personRepository.findAll());
         return ResultUtil.success(personRepository.findAll());
     }
 
@@ -48,5 +49,12 @@ public class IndexController {
     @GetMapping("/getage/{id}")
     public void getAge(@PathVariable(value = "id") long id)throws PersonException{
         personService.getAge(id);
+    }
+
+    @GetMapping("/personlist")
+    public String getList(Model model){
+        System.out.println("method in getList!");
+        model.addAttribute("persons",personRepository.findAll());
+        return "personlist";
     }
 }

@@ -1,10 +1,14 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>hello</title>
+    <title>HebeHan</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<p th:text="'Hello！, ' + ${user} + '!'" >3333</p>
+<h1>Demo Index!</h1>
+
+<a th:href="@{/personlist.html}">去person列表</a><br />
+<a th:href="@{/static/html/saveperson.html}">去存person</a>
+
 </body>
 </html>
