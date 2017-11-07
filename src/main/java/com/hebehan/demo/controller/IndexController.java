@@ -52,9 +52,14 @@ public class IndexController {
     }
 
     @GetMapping("/personlist")
-    public String getList(Model model){
+    public String togetList(Model model){
         System.out.println("method in getList!");
         model.addAttribute("persons",personRepository.findAll());
         return "personlist";
+    }
+
+    @GetMapping("/saveperson")
+    public String tosavePerson(){
+        return "saveperson";
     }
 }
