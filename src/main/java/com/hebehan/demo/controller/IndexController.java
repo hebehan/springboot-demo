@@ -4,7 +4,7 @@ import com.hebehan.demo.exception.PersonException;
 import com.hebehan.demo.jparepository.PersonRepository;
 import com.hebehan.demo.model.Person;
 import com.hebehan.demo.model.Result;
-import com.hebehan.demo.result.ResultUtil;
+import com.hebehan.demo.utils.ResultUtil;
 import com.hebehan.demo.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -61,5 +61,22 @@ public class IndexController {
     @GetMapping("/saveperson")
     public String tosavePerson(){
         return "saveperson";
+    }
+
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
+
+
+
+    @PostMapping("/loginverify")
+    public String loginverify(@RequestParam("id") long id,Model model){
+        Person person = personRepository.findOne(id);
+        System.out.println(person==null?"person is null":"person is not null");
+        if (person != null){
+            model.addAttribute("result",person);
+        }
+        return "loginresult";
     }
 }

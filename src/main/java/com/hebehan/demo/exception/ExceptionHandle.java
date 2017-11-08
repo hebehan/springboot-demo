@@ -1,7 +1,7 @@
 package com.hebehan.demo.exception;
 
 import com.hebehan.demo.model.Result;
-import com.hebehan.demo.result.ResultUtil;
+import com.hebehan.demo.utils.ResultUtil;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;

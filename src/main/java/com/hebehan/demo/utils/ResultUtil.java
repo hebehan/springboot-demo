@@ -1,8 +1,6 @@
-package com.hebehan.demo.result;
+package com.hebehan.demo.utils;
 
 import com.hebehan.demo.model.Result;
-
-import java.util.List;
 
 public class ResultUtil {
 
