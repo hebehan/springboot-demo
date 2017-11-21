@@ -13,7 +13,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
 
-        registry.addInterceptor(new HttpInterceptor()).addPathPatterns("/**");//.excludePathPatterns("这里写排除的地址");
+        registry.addInterceptor(new HttpInterceptor()).addPathPatterns("/**").excludePathPatterns("/static/**");
         super.addInterceptors(registry);
     }
 }
